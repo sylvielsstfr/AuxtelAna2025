@@ -17,6 +17,12 @@ classifiers = [
 dynamic = ["version"]
 requires-python = ">=3.9"
 dependencies = [
+   "numpy",
+    "scipy",
+    "pandas",
+    "astropy",
+    "matplotlib",
+    "seaborn",
 ]
 
 [project.urls]
@@ -104,3 +110,14 @@ ignore = [
 
 [tool.coverage.run]
 omit=["src/auxtelana2025/_version.py"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["auxtelana2025"]  # package names should match these glob patterns (["*"] by default)
+exclude = ["my_package.tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = true  # to activate scanning PEP 420 namespaces (true by default)
+
+
+[tool.setuptools.package-data]
+mypkg = ["*.csv", "*.json","*.txt"]
